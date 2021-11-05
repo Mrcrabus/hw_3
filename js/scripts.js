@@ -1,8 +1,8 @@
 window.addEventListener('load', function () {
     let menu = document.querySelector('.menu');
-    const goUp = document.querySelector('.go_up')
+    const goUp = document.querySelector('.go_up');
 
-    const categories = {
+    const navbar = {
         'about': 0,
         'price': 0,
         'app': 0,
@@ -32,8 +32,10 @@ window.addEventListener('load', function () {
         if (e.target.classList.contains('menu__link')) {
             e.preventDefault();
 
+            console.log(this.getBoundingClientRect())
+
             let link = e.target;
-            scrollToId(link.hash);
+            scrollToId(link.hash, this);
 
             menu.querySelector('.menu__link-active').classList.remove('menu__link-active');
             link.classList.add('menu__link-active');
@@ -51,13 +53,12 @@ window.addEventListener('load', function () {
 
 });
 
-function scrollToId(id) {
+function scrollToId(id, elemIndent) {
     let target = document.querySelector(id);
 
     if (target !== null) {
-        let pos = target.offsetTop - 70;
-        console.log(target);
-        console.log(target.getBoundingClientRect())
+        let pos = target.offsetTop - elemIndent.getBoundingClientRect().height;
+
 
         window.scrollTo({
             top: pos,
