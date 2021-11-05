@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    background: #eee;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    height: 50px;
+    width: 100%;
+}
+
+.menu a {
+    color: inherit;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.4s;
+}
+
+.menu .menu__link-active {
+    color: #ff0;
+}
+
+.content {
+    margin-top: 70px;
+}
+
+.go_up {
+    background: rgba(0, 0, 0, 0.42);
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px black;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
