@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
     let menu = document.querySelector('.menu');
-    const goUp = document.querySelector('.go_up');
+    const goUp = document.querySelector('.go__up');
 
     const navbar = {
         'about': 0,
@@ -32,7 +32,6 @@ window.addEventListener('load', function () {
         if (e.target.classList.contains('menu__link')) {
             e.preventDefault();
 
-            console.log(this.getBoundingClientRect())
 
             let link = e.target;
             scrollToId(link.hash, this);
@@ -47,8 +46,18 @@ window.addEventListener('load', function () {
         // this.style.display = 'none'
     })
 
+    window.addEventListener('scroll', btnOpacity)
 
-    window.onscroll = btnOpacity
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset >= 479){
+            // menu.querySelector('.menu__link-active').classList.remove('menu__link-active');
+            // link.classList.add('menu__link-active');
+
+            console.log(window.pageYOffset)
+        }
+    })
+
+
 
 
 });
